@@ -15,7 +15,7 @@ import (
 	"golang.org/x/crypto/openpgp"
 )
 
-// Deocde decodes data using the secconf codec.
+// Decode: Deocde decodes data using the secconf codec.
 func Decode(data []byte, secertKeyring io.Reader) ([]byte, error) {
 	decoder := base64.NewDecoder(base64.StdEncoding, bytes.NewBuffer(data))
 	entityList, err := openpgp.ReadArmoredKeyRing(secertKeyring)
